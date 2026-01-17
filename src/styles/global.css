@@ -1,0 +1,6 @@
+@import 'normalize.css';
+@import 'tailwindcss';
+
+.ant-layout {
+  min-height: 100vh;
+}

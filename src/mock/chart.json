@@ -1,0 +1,993 @@
+{
+  "mockProvinceData": [
+    {
+      "name": "北京市",
+      "value": 200,
+      "label": "首都"
+    },
+    {
+      "name": "上海市",
+      "value": 2400,
+      "label": "魔都"
+    },
+    {
+      "name": "广东省",
+      "value": 2100,
+      "label": "经济大省"
+    },
+    {
+      "name": "江苏省",
+      "value": 2000,
+      "label": "江南水乡"
+    },
+    {
+      "name": "浙江省",
+      "value": 1800,
+      "label": "鱼米之乡"
+    },
+    {
+      "name": "山东省",
+      "value": 1700,
+      "label": "孔孟故里"
+    },
+    {
+      "name": "河南省",
+      "value": 1600,
+      "label": "中原腹地"
+    },
+    {
+      "name": "河北省",
+      "value": 1400,
+      "label": "燕赵大地"
+    },
+    {
+      "name": "四川省",
+      "value": 1500,
+      "label": "天府之国"
+    },
+    {
+      "name": "湖北省",
+      "value": 1300,
+      "label": "九省通衢"
+    },
+    {
+      "name": "湖南省",
+      "value": 1200,
+      "label": "三湘四水"
+    },
+    {
+      "name": "福建省",
+      "value": 1100,
+      "label": "海上丝绸之路"
+    },
+    {
+      "name": "安徽省",
+      "value": 1000,
+      "label": "江淮大地"
+    },
+    {
+      "name": "辽宁省",
+      "value": 900,
+      "label": "工业摇篮"
+    },
+    {
+      "name": "陕西省",
+      "value": 800,
+      "label": "古都西安"
+    },
+    {
+      "name": "江西省",
+      "value": 700,
+      "label": "物华天宝"
+    },
+    {
+      "name": "重庆市",
+      "value": 1600,
+      "label": "山城"
+    },
+    {
+      "name": "云南省",
+      "value": 600,
+      "label": "彩云之南"
+    },
+    {
+      "name": "贵州省",
+      "value": 500,
+      "label": "山地公园"
+    },
+    {
+      "name": "新疆维吾尔自治区",
+      "value": 2300,
+      "label": "塞外江南"
+    },
+    {
+      "name": "西藏自治区",
+      "value": 300,
+      "label": "雪域高原"
+    },
+    {
+      "name": "内蒙古自治区",
+      "value": 1450,
+      "label": "草原明珠"
+    },
+    {
+      "name": "广西壮族自治区",
+      "value": 800,
+      "label": "桂林山水"
+    },
+    {
+      "name": "海南省",
+      "value": 700,
+      "label": "天涯海角"
+    },
+    {
+      "name": "黑龙江省",
+      "value": 550,
+      "label": "冰雪王国"
+    },
+    {
+      "name": "吉林省",
+      "value": 500,
+      "label": "汽车城"
+    },
+    {
+      "name": "山西省",
+      "value": 650,
+      "label": "煤炭大省"
+    },
+    {
+      "name": "甘肃省",
+      "value": 400,
+      "label": "丝路重镇"
+    },
+    {
+      "name": "青海省",
+      "value": 200,
+      "label": "江河源头"
+    },
+    {
+      "name": "宁夏回族自治区",
+      "value": 300,
+      "label": "塞上江南"
+    },
+    {
+      "name": "台湾省",
+      "value": 1200,
+      "label": "宝岛台湾"
+    },
+    {
+      "name": "天津市",
+      "value": 1100,
+      "label": "津门故里"
+    },
+    {
+      "name": "香港特别行政区",
+      "value": 1800,
+      "label": "东方之珠"
+    },
+    {
+      "name": "澳门特别行政区",
+      "value": 1000,
+      "label": "莲花宝地"
+    }
+  ],
+  "barOption": {
+    "title": {
+      "text": "Stacked Area Chart"
+    },
+    "tooltip": {
+      "trigger": "axis",
+      "axisPointer": {
+        "type": "cross",
+        "label": {
+          "backgroundColor": "#6a7985"
+        }
+      }
+    },
+    "legend": {
+      "data": [
+        "Email",
+        "Union Ads",
+        "Video Ads",
+        "Direct",
+        "Search Engine"
+      ]
+    },
+    "toolbox": {
+      "feature": {
+        "saveAsImage": {}
+      }
+    },
+    "xAxis": [
+      {
+        "type": "category",
+        "boundaryGap": false,
+        "data": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      }
+    ],
+    "yAxis": [
+      {
+        "type": "value"
+      }
+    ],
+    "series": [
+      {
+        "name": "Email",
+        "type": "line",
+        "stack": "Total",
+        "areaStyle": {},
+        "emphasis": {
+          "focus": "series"
+        },
+        "data": [
+          120,
+          132,
+          101,
+          134,
+          90,
+          230,
+          210
+        ]
+      },
+      {
+        "name": "Union Ads",
+        "type": "line",
+        "stack": "Total",
+        "areaStyle": {},
+        "emphasis": {
+          "focus": "series"
+        },
+        "data": [
+          220,
+          182,
+          191,
+          234,
+          290,
+          330,
+          310
+        ]
+      },
+      {
+        "name": "Video Ads",
+        "type": "line",
+        "stack": "Total",
+        "areaStyle": {},
+        "emphasis": {
+          "focus": "series"
+        },
+        "data": [
+          150,
+          232,
+          201,
+          154,
+          190,
+          330,
+          410
+        ]
+      },
+      {
+        "name": "Direct",
+        "type": "line",
+        "stack": "Total",
+        "areaStyle": {},
+        "emphasis": {
+          "focus": "series"
+        },
+        "data": [
+          320,
+          332,
+          301,
+          334,
+          390,
+          330,
+          320
+        ]
+      },
+      {
+        "name": "Search Engine",
+        "type": "line",
+        "stack": "Total",
+        "label": {
+          "show": true,
+          "position": "top"
+        },
+        "areaStyle": {},
+        "emphasis": {
+          "focus": "series"
+        },
+        "data": [
+          820,
+          932,
+          901,
+          934,
+          1290,
+          1330,
+          1320
+        ]
+      }
+    ]
+  },
+  "pieOption": {
+    "title": [
+      {
+        "text": "Tangential Polar Bar Label Position (middle)"
+      }
+    ],
+    "polar": {
+      "radius": [
+        30,
+        "60%"
+      ]
+    },
+    "angleAxis": {
+      "max": 4,
+      "startAngle": 75
+    },
+    "radiusAxis": {
+      "type": "category",
+      "data": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "tooltip": {},
+    "series": {
+      "type": "bar",
+      "data": [
+        2,
+        1.2,
+        2.4,
+        3.6
+      ],
+      "coordinateSystem": "polar",
+      "label": {
+        "show": true,
+        "position": "middle",
+        "formatter": "{b}: {c}"
+      }
+    }
+  },
+  "pieOption2": {
+    "legend": {
+      "top": "bottom"
+    },
+    "series": [
+      {
+        "name": "Nightingale Chart",
+        "type": "pie",
+        "radius": [
+          30,
+          90
+        ],
+        "center": [
+          "50%",
+          "50%"
+        ],
+        "roseType": "area",
+        "itemStyle": {
+          "borderRadius": 4
+        },
+        "data": [
+          {
+            "value": 40,
+            "name": "rose 1"
+          },
+          {
+            "value": 38,
+            "name": "rose 2"
+          },
+          {
+            "value": 32,
+            "name": "rose 3"
+          },
+          {
+            "value": 30,
+            "name": "rose 4"
+          },
+          {
+            "value": 28,
+            "name": "rose 5"
+          },
+          {
+            "value": 26,
+            "name": "rose 6"
+          },
+          {
+            "value": 22,
+            "name": "rose 7"
+          },
+          {
+            "value": 18,
+            "name": "rose 8"
+          }
+        ]
+      }
+    ]
+  },
+  "chordOption": {
+    "series": [
+      {
+        "type": "chord",
+        "padAngle": 1,
+        "center": [
+          "50%",
+          "48%"
+        ],
+        "radius": [
+          "50%",
+          "60%"
+        ],
+        "data": [
+          {
+            "name": "A"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "G"
+          }
+        ],
+        "itemStyle": {
+          "borderRadius": [
+            0,
+            15
+          ],
+          "borderWidth": 2,
+          "borderColor": "#fff"
+        },
+        "lineStyle": {
+          "opacity": 0.3,
+          "color": "gradient"
+        },
+        "emphasis": {
+          "focus": "self"
+        },
+        "label": {
+          "show": true,
+          "position": "inside",
+          "color": "#fff",
+          "fontWeight": "bold"
+        },
+        "links": [
+          {
+            "source": "A",
+            "target": "B",
+            "value": 14
+          },
+          {
+            "source": "A",
+            "target": "C",
+            "value": 8
+          },
+          {
+            "source": "B",
+            "target": "C",
+            "value": 20
+          },
+          {
+            "source": "B",
+            "target": "E",
+            "value": 15
+          },
+          {
+            "source": "C",
+            "target": "B",
+            "value": 8
+          },
+          {
+            "source": "C",
+            "target": "E",
+            "value": 3
+          },
+          {
+            "source": "D",
+            "target": "A",
+            "value": 12
+          },
+          {
+            "source": "D",
+            "target": "B",
+            "value": 3
+          },
+          {
+            "source": "E",
+            "target": "A",
+            "value": 15
+          },
+          {
+            "source": "E",
+            "target": "C",
+            "value": 5
+          },
+          {
+            "source": "F",
+            "target": "C",
+            "value": 5
+          },
+          {
+            "source": "G",
+            "target": "A",
+            "value": 6
+          },
+          {
+            "source": "G",
+            "target": "B",
+            "value": 8
+          },
+          {
+            "source": "G",
+            "target": "D",
+            "value": 4
+          }
+        ]
+      }
+    ]
+  },
+  "radarOption": {
+    "color": [
+      "#67F9D8",
+      "#FFE434",
+      "#56A3F1",
+      "#FF917C"
+    ],
+    "title": {
+      "text": "Customized Radar Chart"
+    },
+    "legend": {},
+    "radar": [
+      {
+        "indicator": [
+          {
+            "text": "Indicator1"
+          },
+          {
+            "text": "Indicator2"
+          },
+          {
+            "text": "Indicator3"
+          },
+          {
+            "text": "Indicator4"
+          },
+          {
+            "text": "Indicator5"
+          }
+        ],
+        "center": [
+          "25%",
+          "50%"
+        ],
+        "radius": 120,
+        "startAngle": 90,
+        "splitNumber": 4,
+        "shape": "circle",
+        "axisName": {
+          "formatter": "【{value}】",
+          "color": "#428BD4"
+        },
+        "splitArea": {
+          "areaStyle": {
+            "color": [
+              "#77EADF",
+              "#26C3BE",
+              "#64AFE9",
+              "#428BD4"
+            ],
+            "shadowColor": "rgba(0, 0, 0, 0.2)",
+            "shadowBlur": 10
+          }
+        },
+        "axisLine": {
+          "lineStyle": {
+            "color": "rgba(211, 253, 250, 0.8)"
+          }
+        },
+        "splitLine": {
+          "lineStyle": {
+            "color": "rgba(211, 253, 250, 0.8)"
+          }
+        }
+      },
+      {
+        "indicator": [
+          {
+            "text": "Indicator1",
+            "max": 150
+          },
+          {
+            "text": "Indicator2",
+            "max": 150
+          },
+          {
+            "text": "Indicator3",
+            "max": 150
+          },
+          {
+            "text": "Indicator4",
+            "max": 120
+          },
+          {
+            "text": "Indicator5",
+            "max": 108
+          },
+          {
+            "text": "Indicator6",
+            "max": 72
+          }
+        ],
+        "center": [
+          "75%",
+          "50%"
+        ],
+        "radius": 120,
+        "axisName": {
+          "color": "#fff",
+          "backgroundColor": "#666",
+          "borderRadius": 3,
+          "padding": [
+            3,
+            5
+          ]
+        }
+      }
+    ],
+    "series": [
+      {
+        "type": "radar",
+        "emphasis": {
+          "lineStyle": {
+            "width": 4
+          }
+        },
+        "data": [
+          {
+            "value": [
+              100,
+              8,
+              0.4,
+              -80,
+              2000
+            ],
+            "name": "Data A"
+          },
+          {
+            "value": [
+              60,
+              5,
+              0.3,
+              -100,
+              1500
+            ],
+            "name": "Data B",
+            "areaStyle": {
+              "color": "rgba(255, 228, 52, 0.6)"
+            }
+          }
+        ]
+      },
+      {
+        "type": "radar",
+        "radarIndex": 1,
+        "data": [
+          {
+            "value": [
+              120,
+              118,
+              130,
+              100,
+              99,
+              70
+            ],
+            "name": "Data C",
+            "symbol": "rect",
+            "symbolSize": 12,
+            "lineStyle": {
+              "type": "dashed"
+            },
+            "label": {
+              "show": true
+            }
+          },
+          {
+            "value": [
+              100,
+              93,
+              50,
+              90,
+              70,
+              60
+            ],
+            "name": "Data D"
+          }
+        ]
+      }
+    ]
+  },
+  "funnelOption": {
+    "title": {
+      "text": "Funnel Compare",
+      "subtext": "Fake Data",
+      "left": "left",
+      "top": "bottom"
+    },
+    "tooltip": {
+      "trigger": "item",
+      "formatter": "{a} <br/>{b} : {c}%"
+    },
+    "toolbox": {
+      "show": true,
+      "orient": "vertical",
+      "top": "center",
+      "feature": {
+        "dataView": {
+          "readOnly": false
+        },
+        "restore": {},
+        "saveAsImage": {}
+      }
+    },
+    "legend": {
+      "orient": "vertical",
+      "left": "left",
+      "data": [
+        "Prod A",
+        "Prod B",
+        "Prod C",
+        "Prod D",
+        "Prod E"
+      ]
+    },
+    "series": [
+      {
+        "name": "Funnel",
+        "type": "funnel",
+        "width": "40%",
+        "height": "45%",
+        "left": "5%",
+        "top": "50%",
+        "funnelAlign": "right",
+        "data": [
+          {
+            "value": 60,
+            "name": "Prod C"
+          },
+          {
+            "value": 30,
+            "name": "Prod D"
+          },
+          {
+            "value": 10,
+            "name": "Prod E"
+          },
+          {
+            "value": 80,
+            "name": "Prod B"
+          },
+          {
+            "value": 100,
+            "name": "Prod A"
+          }
+        ]
+      },
+      {
+        "name": "Pyramid",
+        "type": "funnel",
+        "width": "40%",
+        "height": "45%",
+        "left": "5%",
+        "top": "5%",
+        "sort": "ascending",
+        "funnelAlign": "right",
+        "data": [
+          {
+            "value": 60,
+            "name": "Prod C"
+          },
+          {
+            "value": 30,
+            "name": "Prod D"
+          },
+          {
+            "value": 10,
+            "name": "Prod E"
+          },
+          {
+            "value": 80,
+            "name": "Prod B"
+          },
+          {
+            "value": 100,
+            "name": "Prod A"
+          }
+        ]
+      },
+      {
+        "name": "Funnel",
+        "type": "funnel",
+        "width": "40%",
+        "height": "45%",
+        "left": "55%",
+        "top": "5%",
+        "funnelAlign": "left",
+        "data": [
+          {
+            "value": 60,
+            "name": "Prod C"
+          },
+          {
+            "value": 30,
+            "name": "Prod D"
+          },
+          {
+            "value": 10,
+            "name": "Prod E"
+          },
+          {
+            "value": 80,
+            "name": "Prod B"
+          },
+          {
+            "value": 100,
+            "name": "Prod A"
+          }
+        ]
+      },
+      {
+        "name": "Pyramid",
+        "type": "funnel",
+        "width": "40%",
+        "height": "45%",
+        "left": "55%",
+        "top": "50%",
+        "sort": "ascending",
+        "funnelAlign": "left",
+        "data": [
+          {
+            "value": 60,
+            "name": "Prod C"
+          },
+          {
+            "value": 30,
+            "name": "Prod D"
+          },
+          {
+            "value": 10,
+            "name": "Prod E"
+          },
+          {
+            "value": 80,
+            "name": "Prod B"
+          },
+          {
+            "value": 100,
+            "name": "Prod A"
+          }
+        ]
+      }
+    ]
+  },
+  "lineOption": {
+    "tooltip": {
+      "trigger": "axis",
+      "axisPointer": {
+        "type": "cross",
+        "label": {
+          "backgroundColor": "#6a7985"
+        }
+      }
+    },
+    "xAxis": {
+      "type": "category",
+      "boundaryGap": false,
+      "data": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "axisLabel": {
+        "formatter": "{value}年"
+      }
+    },
+    "yAxis": {
+      "type": "value",
+      "axisLabel": {
+        "formatter": "{value}万"
+      }
+    },
+    "legend": {
+      "data": [
+        "考研人数",
+        "考公人数"
+      ]
+    },
+    "series": [
+      {
+        "data": [
+          172,
+          165,
+          177,
+          201,
+          238,
+          290,
+          341,
+          377,
+          457,
+          474,
+          438,
+          388,
+          343
+        ],
+        "type": "line",
+        "name": "考研人数",
+        "label": {
+          "show": true,
+          "position": "top",
+          "formatter": "{c}万"
+        },
+        "tooltip": {
+          "valueFormatter": "{value}万"
+        }
+      },
+      {
+        "data": [
+          157.5,
+          140.9,
+          139.46,
+          148.63,
+          165.97,
+          137.93,
+          143.7,
+          157.6,
+          181,
+          259.77,
+          303.3,
+          341.6,
+          351.3
+        ],
+        "type": "line",
+        "name": "考公人数",
+        "label": {
+          "show": true,
+          "position": "top",
+          "formatter": "{c}万"
+        },
+        "tooltip": {
+          "valueFormatter": "{value}万"
+        }
+      }
+    ]
+  }
+}
