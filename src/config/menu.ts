@@ -1,5 +1,3 @@
-import enUSLocal from '@/locales/en-US';
-import zhLocal from '@/locales/zh-CN';
 import type { JSX } from 'react';
 
 export default [

@@ -9,6 +9,7 @@ import { lazy, Suspense } from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   redirect,
   Route,
   RouterProvider,
@@ -19,18 +20,19 @@ import FullPageLoading from './components/FullPageLoading';
 import './i18n';
 import { clearAllCookies } from './utils/cookie';
 import { clearAllStorage, getToken } from './utils/storage';
+import UserDetailPage from './views/UserDetail';
 
-const Index = lazy(() => import('@/views/index'));
-const Dashboard = lazy(() => import('@/views/dashboard'));
-const Setting = lazy(() => import('@/views/setting'));
-const Chart = lazy(() => import('@/views/chart'));
-const User = lazy(() => import('@/views/admin/user'));
-const Role = lazy(() => import('@/views/admin/role'));
-const Permission = lazy(() => import('@/views/admin/permission'));
+const Index = lazy(() => import('@/views/Index'));
+const Dashboard = lazy(() => import('@/views/Dashboard'));
+const Setting = lazy(() => import('@/views/Setting'));
+const Chart = lazy(() => import('@/views/Chart'));
+const User = lazy(() => import('@/views/admin/User'));
+const Role = lazy(() => import('@/views/admin/Role'));
+const Permission = lazy(() => import('@/views/admin/Permission'));
 const ErrorPage = lazy(() => import('./error-page'));
 const NotFoundPage = lazy(() => import('./404-not-found'));
 
-const Login = lazy(() => import('@/views/login'));
+const Login = lazy(() => import('@/views/Login'));
 
 interface ThemeContextProps {
   defaultTheme: ThemeConfig;
@@ -75,9 +77,13 @@ const App = () => {
           <Route index element={<Index />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="setting" element={<Setting />} />
-          <Route path="admin/user" element={<User />} />
-          <Route path="admin/role" element={<Role />} />
-          <Route path="admin/permission" element={<Permission />} />
+          <Route path="admin">
+            <Route index element={<Navigate to="user" replace />} />
+            <Route path="user" element={<User />} />
+            <Route path="user/:id" element={<UserDetailPage />} />
+            <Route path="role" element={<Role />} />
+            <Route path="permission" element={<Permission />} />
+          </Route>
           <Route path="chart" element={<Chart />} />
         </Route>
         <Route path="login" element={<Login />} loader={loginLoader} />
