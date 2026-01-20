@@ -2,14 +2,22 @@ import { getStorage } from '@/utils/storage';
 import enUSLocal from './en-US';
 import zhLocal from './zh-CN';
 
-export const locales = {
-  'zh-CN': zhLocal,
-  'en-US': enUSLocal
+export const defaultLocale = 'zh-CN';
+export const enUS = 'en-US';
+
+export const localeMap: { [key: string]: string } = {
+  [defaultLocale]: defaultLocale,
+  [enUS]: enUS
 };
 
-export type LocaleType = keyof typeof locales;
+export const locales = {
+  [localeMap[defaultLocale]]: zhLocal,
+  [localeMap[enUS]]: enUSLocal
+};
+
+export type LocaleType = keyof typeof localeMap;
 
 export const getLanguage = (): string => {
-  const lang = getStorage('locale') || navigator.language || 'zh-CN';
+  const lang = getStorage('locale') || navigator.language || defaultLocale;
   return lang;
 };

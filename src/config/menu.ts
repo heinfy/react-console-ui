@@ -2,17 +2,6 @@ import type { JSX } from 'react';
 
 export default [
   {
-    id: 11,
-    pid: 0,
-    permission: 'menu:home',
-    label: {
-      'zh-CN': '首页',
-      'en-US': 'Home'
-    },
-    key: '/',
-    icon: 'HomeOutlined'
-  },
-  {
     id: 1,
     pid: 0,
     permission: 'menu:dashboard',
@@ -20,8 +9,8 @@ export default [
       'zh-CN': '仪表盘',
       'en-US': 'Dashboard'
     },
-    key: '/dashboard',
-    icon: 'PieChartOutlined'
+    key: '/',
+    icon: 'HomeOutlined'
   },
   {
     id: 2,
@@ -32,7 +21,7 @@ export default [
       'en-US': 'Chart'
     },
     key: '/chart',
-    icon: 'DesktopOutlined'
+    icon: 'PieChartOutlined'
   },
   {
     id: 3,

@@ -37,7 +37,10 @@ const settingDrawer = {
   'pages.login.registerAccount': '注册邮箱',
   // 404 页面
   'pages.notfound.404.subTitle': '抱歉，你访问的页面不存在',
-  'pages.notfound.404.backHome': '返回首页'
+  'pages.notfound.404.backHome': '返回首页',
+  // 复制组件
+  'com.copyableText.copySuccess': '已复制',
+  'com.copyableText.clickToCopy': '点击复制'
 };
 
 const zhLocal = {

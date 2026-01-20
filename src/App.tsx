@@ -3,9 +3,9 @@ import PageLayout from '@/components/PageLayout';
 import { ThemeConsumer, ThemeProvider } from '@/components/Provider/Theme';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { saveUserInfoByAmount, selectUser } from '@/store/user/userSlice';
-import type { ThemeConfig } from 'antd';
+import type { ConfigProviderProps, ThemeConfig } from 'antd';
 import { ConfigProvider, Layout, message } from 'antd';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -22,7 +22,19 @@ import { clearAllCookies } from './utils/cookie';
 import { clearAllStorage, getToken } from './utils/storage';
 import UserDetailPage from './views/UserDetail';
 
-const Index = lazy(() => import('@/views/Index'));
+import enUS from 'antd/locale/en_US';
+import zhCN from 'antd/locale/zh_CN';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import { useTranslation } from 'react-i18next';
+import { defaultLocale, enUS as enUSKey } from './locales';
+
+console.log('zhCN', zhCN);
+
+type Locale = ConfigProviderProps['locale'];
+
+dayjs.locale('zh-cn');
+
 const Dashboard = lazy(() => import('@/views/Dashboard'));
 const Setting = lazy(() => import('@/views/Setting'));
 const Chart = lazy(() => import('@/views/Chart'));
@@ -40,8 +52,15 @@ interface ThemeContextProps {
 
 const App = () => {
   const { userInfo } = useAppSelector(selectUser);
+  const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
   console.log('用户信息： ', userInfo);
+
+  const locale = useMemo(() => {
+    const isDefault = i18n.language === defaultLocale;
+    dayjs.locale(isDefault ? defaultLocale : enUSKey);
+    return isDefault ? zhCN : enUS;
+  }, [i18n.language]) as Locale;
 
   const protectedLoader = async ({ request }: LoaderFunctionArgs) => {
     if (userInfo) return null;
@@ -74,8 +93,7 @@ const App = () => {
           errorElement={<ErrorPage />}
           loader={protectedLoader}
         >
-          <Route index element={<Index />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
           <Route path="setting" element={<Setting />} />
           <Route path="admin">
             <Route index element={<Navigate to="user" replace />} />
@@ -98,7 +116,7 @@ const App = () => {
       <ThemeConsumer>
         {({ defaultTheme }: ThemeContextProps) => {
           return (
-            <ConfigProvider theme={{
+            <ConfigProvider locale={locale} theme={{
               ...defaultTheme,
             }}>
               <Suspense fallback={<FullPageLoading />}>

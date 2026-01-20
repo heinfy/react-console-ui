@@ -37,7 +37,10 @@ const settingDrawer = {
   'pages.login.registerAccount': 'Register Account',
   // 404 页面
   'pages.notfound.404.subTitle': 'Sorry, the page you visited does not exist',
-  'pages.notfound.404.backHome': 'Back to Home'
+  'pages.notfound.404.backHome': 'Back to Home',
+  // 复制组件
+  'com.copyableText.copySuccess': 'Copyed',
+  'com.copyableText.clickToCopy': 'Click To Copy'
 };
 
 const enUSLocal = {

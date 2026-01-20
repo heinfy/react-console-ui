@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/store/hooks';
 import { selectUser } from '@/store/user/userSlice';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Watermark } from 'antd';
 import React, { useMemo, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ import type { SiderMenuProps } from '@/components/SiderMenu';
 import type { UserInfo } from '@/types/self';
 import type { MenuProps } from 'antd';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 import GlobalBreadcrumb from './GlobalBreadcrumb';
 
 const { Content } = Layout;
@@ -29,6 +30,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 const PageLayout: React.FC = () => {
   const { collapsedWidth, siderWidth } = defaultVar;
   const colSize = useBreakpoint();
+  const { i18n } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys, setOpenKeys] = useState<string[]>([]);
   const [selectedKeys, setSelectedKeys] = useState<string[]>(['/']);
@@ -46,7 +48,7 @@ const PageLayout: React.FC = () => {
   const menuTree = useMemo(() => {
     if (permissions.length == 0) return [];
     return generateRoutes(permissions);
-  }, [permissions]);
+  }, [permissions, i18n.language]);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -68,7 +70,7 @@ const PageLayout: React.FC = () => {
       navigate(redirectPath);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+  }, [location, i18n.language]);
 
   const onOpenChange: MenuProps['onOpenChange'] = (openKeys) => {
     setOpenKeys(openKeys.length === 0 ? [] : openKeys);
@@ -128,50 +130,52 @@ const PageLayout: React.FC = () => {
   };
 
   return (
-    <div
-      className={classNames({
-        [`screen-${colSize}`]: colSize,
-        isMobile: isMobile
-      })}
-    >
-      <LayoutBg />
-      <Layout>
-        {/* 侧边栏 */}
-        {isMobile ? (
-          <SiderDrawer {...siderDrawerProps} />
-        ) : (
-          <>
-            <div
+    <Watermark content={userInfo ? [userInfo.name, userInfo.email] : ''}>
+      <div
+        className={classNames({
+          [`screen-${colSize}`]: colSize,
+          isMobile: isMobile
+        })}
+      >
+        <LayoutBg />
+        <Layout>
+          {/* 侧边栏 */}
+          {isMobile ? (
+            <SiderDrawer {...siderDrawerProps} />
+          ) : (
+            <>
+              <div
+                style={{
+                  width: collapsed ? collapsedWidth : siderWidth,
+                  overflow: 'hidden',
+                  flex: `0 0 ${collapsed ? collapsedWidth : siderWidth}px`,
+                  maxWidth: collapsed ? collapsedWidth : siderWidth,
+                  minWidth: collapsed ? collapsedWidth : siderWidth,
+                  transition: 'all 0.2s ease 0s'
+                }}
+              />
+              <SiderMenu {...siderMenuProps} />
+            </>
+          )}
+          <Layout style={{ position: 'relative' }}>
+            {/* 顶部 */}
+            <Header {...pageHeaderProps} />
+            {/* 内容 */}
+            <Content
               style={{
-                width: collapsed ? collapsedWidth : siderWidth,
-                overflow: 'hidden',
-                flex: `0 0 ${collapsed ? collapsedWidth : siderWidth}px`,
-                maxWidth: collapsed ? collapsedWidth : siderWidth,
-                minWidth: collapsed ? collapsedWidth : siderWidth,
-                transition: 'all 0.2s ease 0s'
+                padding: 24,
+                minHeight: 'calc(100vh - 56px - 108px)'
               }}
-            />
-            <SiderMenu {...siderMenuProps} />
-          </>
-        )}
-        <Layout style={{ position: 'relative' }}>
-          {/* 顶部 */}
-          <Header {...pageHeaderProps} />
-          {/* 内容 */}
-          <Content
-            style={{
-              padding: 24,
-              minHeight: 'calc(100vh - 56px - 108px)'
-            }}
-          >
-            <GlobalBreadcrumb isMobile={isMobile} />
-            <Outlet />
-          </Content>
-          {/* 底部 */}
-          <Footer />
+            >
+              <GlobalBreadcrumb isMobile={isMobile} />
+              <Outlet />
+            </Content>
+            {/* 底部 */}
+            <Footer />
+          </Layout>
         </Layout>
-      </Layout>
-    </div>
+      </div>
+    </Watermark>
   );
 };
 
