@@ -11,10 +11,19 @@ import {
 import echarts from '@/utils/echarts';
 import { Card, Col, Row } from 'antd';
 import ReactECharts from 'echarts-for-react';
-
+import options from '../mock/population';
 const ChartPage = () => {
   return (
     <Row gutter={[16, 16]}>
+      <Col xs={24} sm={24} md={24} lg={24}>
+        <Card title="历年出生人口">
+          <ReactECharts
+            echarts={echarts}
+            option={options}
+            style={{ height: '500px' }}
+          />
+        </Card>
+      </Col>
       <Col xs={24} sm={24} md={24} lg={24}>
         <Card title="全国数据分布">
           <ChinaMap />

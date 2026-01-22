@@ -42,10 +42,6 @@ export type MediaQueryKey = keyof typeof MediaQueryEnum;
  */
 export const getScreenClassName = () => {
   let queryKey: MediaQueryKey | undefined = undefined;
-  // support ssr
-  if (typeof window === 'undefined') {
-    return queryKey;
-  }
   const mediaQueryKey = (Object.keys(MediaQueryEnum) as MediaQueryKey[]).find(
     key => {
       const { matchMedia } = MediaQueryEnum[key];
@@ -59,6 +55,7 @@ export const getScreenClassName = () => {
   return queryKey;
 };
 
+export type Breakpoint = keyof typeof MediaQueryEnum;
 const useBreakpoint = () => {
   const isMd = useMediaQuery(MediaQueryEnum.md.matchMedia);
   const isLg = useMediaQuery(MediaQueryEnum.lg.matchMedia);
@@ -67,15 +64,9 @@ const useBreakpoint = () => {
   const isSm = useMediaQuery(MediaQueryEnum.sm.matchMedia);
   const isXs = useMediaQuery(MediaQueryEnum.xs.matchMedia);
 
-  const [colSpan, setColSpan] = useState<
-    keyof typeof MediaQueryEnum | undefined
-  >(getScreenClassName());
+  const [colSpan, setColSpan] = useState<Breakpoint>(getScreenClassName());
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'test') {
-      setColSpan((process.env.USE_MEDIA as 'md') || 'md');
-      return;
-    }
     if (isXxl) {
       setColSpan('xxl');
       return;
