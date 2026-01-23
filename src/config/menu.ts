@@ -88,6 +88,36 @@ export default [
     icon: 'TableOutlined'
   },
   {
+    id: 6,
+    pid: 0,
+    label: {
+      'zh-CN': '预览页',
+      'en-US': 'Preview'
+    },
+    key: '/preview',
+    icon: 'ProfileOutlined'
+  },
+  {
+    id: 61,
+    pid: 6,
+    label: {
+      'zh-CN': 'Markdown',
+      'en-US': 'Markdown'
+    },
+    key: '/preview/markdown',
+    icon: 'FileMarkdownOutlined'
+  },
+  {
+    id: 62,
+    pid: 6,
+    label: {
+      'zh-CN': 'PDF',
+      'en-US': 'PDF'
+    },
+    key: '/preview/pdf',
+    icon: 'FilePdfOutlined'
+  },
+  {
     id: 5,
     pid: 0,
     permission: 'menu:setting',
