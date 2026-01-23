@@ -4,6 +4,7 @@ import type { Breakpoint, CascaderProps, FormItemProps, InputProps, SelectProps 
 import { Button, Card, Cascader, Col, DatePicker, Flex, Form, Input, Row, Select, Slider, Switch, TimePicker, } from 'antd';
 import classnames from 'classnames';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const { Option } = Select;
 const DateRangePicker = DatePicker.RangePicker;
@@ -156,7 +157,6 @@ const getColSpan = (type: QueryFormFileds['type']) => {
 
 const getQueryFormGrid = (totalColSpan: number[], colSize: Breakpoint) => {
   const grid = []
-  console.log('totalColSpan.length', totalColSpan.length);
   for (let i = 0; i < totalColSpan.length; i++) {
     if (i === 0) grid.push([]);
 
@@ -220,21 +220,20 @@ const getQueryFormGrid = (totalColSpan: number[], colSize: Breakpoint) => {
         break;
       default:
     }
-    console.log('grid', i, JSON.stringify(grid));
   }
   return grid;
 };
 
-const QueryForm = ({ fields, onQuery, onReset }: {
+const QueryForm = ({ fields, onQuery, onReset, isFetching }: {
   fields: QueryFormFileds[];
   onQuery?: (values: object) => void;
   onReset?: () => void;
+  isFetching?: boolean;
 }
 ) => {
-  console.log('fields.length', fields.length);
+  const { t } = useTranslation();
   const [form] = Form.useForm();
   const colSize = useBreakpoint();
-  console.log('colSize', colSize);
   const isMobile = useMemo(() => {
     return colSize === 'sm' || colSize === 'xs';
   }, [colSize]);
@@ -267,7 +266,6 @@ const QueryForm = ({ fields, onQuery, onReset }: {
   }), [colSize, fields]);
 
   const grid = useMemo(() => getQueryFormGrid(totalColSpan, colSize), [totalColSpan, colSize]);
-  console.log('grid', grid);
   // 预计算显示状态相关数据
   const showExpandBtn = useMemo(() => grid.length > 1, [grid]);
   const showFieldCountState = useMemo(() => grid[0]?.length || 0, [grid]);
@@ -318,11 +316,11 @@ const QueryForm = ({ fields, onQuery, onReset }: {
             <Col xs={24} sm={24} md={4} lg={4} xl={4} xxl={2} style={{ position: 'relative' }}>
               {!isMobile && <div className='absolute top-0 left-2 w-px h-full bg-gray-200'></div>}
               <Flex gap="small" vertical={!isMobile} justify="center" align="center">
-                <Button type="primary" htmlType="submit" icon={<SearchOutlined />} >
-                  查询
+                <Button type="primary" htmlType="submit" icon={<SearchOutlined />} loading={isFetching}>
+                  {t('com.query.form.search')}
                 </Button>
                 <Button onClick={handleReset} icon={<RedoOutlined />}>
-                  重置
+                  {t('com.query.form.reset')}
                 </Button>
               </Flex>
             </Col>

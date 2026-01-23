@@ -68,6 +68,26 @@ export default [
     icon: 'ClusterOutlined'
   },
   {
+    id: 4,
+    pid: 0,
+    label: {
+      'zh-CN': '列表页',
+      'en-US': 'List'
+    },
+    key: '/list',
+    icon: 'GroupOutlined'
+  },
+  {
+    id: 41,
+    pid: 4,
+    label: {
+      'zh-CN': '查询表格',
+      'en-US': 'User'
+    },
+    key: '/list/table-list',
+    icon: 'TableOutlined'
+  },
+  {
     id: 5,
     pid: 0,
     permission: 'menu:setting',

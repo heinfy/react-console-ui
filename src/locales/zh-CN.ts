@@ -40,7 +40,26 @@ const settingDrawer = {
   'pages.notfound.404.backHome': '返回首页',
   // 复制组件
   'com.copyableText.copySuccess': '已复制',
-  'com.copyableText.clickToCopy': '点击复制'
+  'com.copyableText.clickToCopy': '点击复制',
+  // 通用查询表单组件
+  'com.query.form.search': '搜索',
+  'com.query.form.reset': '重置',
+  // 表格组件
+  'com.table.card.create': '新建',
+  'com.table.card.delete': '删除',
+  'com.table.card.refresh': '刷新',
+  'com.table.card.columnSetting': '列展示',
+  'com.table.card.columnReset': '重置',
+  'com.table.card.columnFixed.left': '固定在首列',
+  'com.table.card.columnFixed.right': '固定在末列',
+  'com.table.large': '宽松',
+  'com.table.middle': '中等',
+  'com.table.small': '紧凑',
+
+  // 通用 Popconfirm 弹窗
+  'common.confirm.content': '确定要执行此操作吗？',
+  'common.cancel': '取消',
+  'common.ok': '确定'
 };
 
 const zhLocal = {

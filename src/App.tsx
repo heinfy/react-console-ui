@@ -41,6 +41,7 @@ const Chart = lazy(() => import('@/views/Chart'));
 const User = lazy(() => import('@/views/admin/User'));
 const Role = lazy(() => import('@/views/admin/Role'));
 const Permission = lazy(() => import('@/views/admin/Permission'));
+const TableList = lazy(() => import('@/views/list/TableList'));
 const ErrorPage = lazy(() => import('./error-page'));
 const NotFoundPage = lazy(() => import('./404-not-found'));
 
@@ -101,6 +102,10 @@ const App = () => {
             <Route path="user/:id" element={<UserDetailPage />} />
             <Route path="role" element={<Role />} />
             <Route path="permission" element={<Permission />} />
+          </Route>
+          <Route path="list">
+            <Route index element={<Navigate to="table-list" replace />} />
+            <Route path="table-list" element={<TableList />} />
           </Route>
           <Route path="chart" element={<Chart />} />
         </Route>

@@ -149,7 +149,6 @@ const SettingPage: React.FC = () => {
         name: 'score',
         label: '评分',
       }
-
     }
   ];
 
