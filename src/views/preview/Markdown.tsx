@@ -1,7 +1,7 @@
 
 import Markdown from '@/components/Markdown';
+import { randomReply1, randomReply2 } from '@/mock/MarkdownData';
 import { Card } from 'antd';
-import { randomReply1, randomReply2 } from './mockData';
 const MarkdownPage: React.FC = () => {
 
   return <>

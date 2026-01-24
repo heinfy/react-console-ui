@@ -43,7 +43,8 @@ const Role = lazy(() => import('@/views/admin/Role'));
 const Permission = lazy(() => import('@/views/admin/Permission'));
 const TableList = lazy(() => import('@/views/list/TableList'));
 const Markdown = lazy(() => import('@/views/preview/Markdown'));
-const Pdf = lazy(() => import('@/views/preview/PDF'));
+const Pdf = lazy(() => import('@/views/preview/Pdf'));
+const Editor = lazy(() => import('@/views/preview/Editor'));
 const ErrorPage = lazy(() => import('./error-page'));
 const NotFoundPage = lazy(() => import('./404-not-found'));
 
@@ -113,6 +114,7 @@ const App = () => {
             <Route index element={<Navigate to="markdown" replace />} />
             <Route path="markdown" element={<Markdown />} />
             <Route path="pdf" element={<Pdf />} />
+            <Route path="editor" element={<Editor />} />
           </Route>
           <Route path="chart" element={<Chart />} />
         </Route>

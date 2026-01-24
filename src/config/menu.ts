@@ -118,6 +118,16 @@ export default [
     icon: 'FilePdfOutlined'
   },
   {
+    id: 63,
+    pid: 6,
+    label: {
+      'zh-CN': '编辑器',
+      'en-US': 'Editor'
+    },
+    key: '/preview/editor',
+    icon: 'CodepenOutlined'
+  },
+  {
     id: 5,
     pid: 0,
     permission: 'menu:setting',

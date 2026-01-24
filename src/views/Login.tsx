@@ -18,7 +18,7 @@ import { lightTheme } from '@/context/ThemeContext';
 import useEmotionCss from '@/hooks/useEmotionCss';
 import type { LoginBody } from '@/types/auth';
 import { getStorage, setStorage, setToken, THEME_MODE, TOKEN_TYPE } from '@/utils/storage';
-import classNames, { length } from 'classnames';
+import classNames from 'classnames';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
