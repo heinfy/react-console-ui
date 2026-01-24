@@ -41,6 +41,7 @@ const PageLayout: React.FC = () => {
     else setCollapsed(false);
     return isM;
   }, [colSize]);
+  console.log('colSize', colSize);
   const { userInfo } = useAppSelector(selectUser) as { userInfo: UserInfo };
   const permissions = userInfo.permissions
     .filter(perm => perm.name.indexOf('menu:') == 0)

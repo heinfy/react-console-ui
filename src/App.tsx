@@ -43,7 +43,7 @@ const Role = lazy(() => import('@/views/admin/Role'));
 const Permission = lazy(() => import('@/views/admin/Permission'));
 const TableList = lazy(() => import('@/views/list/TableList'));
 const Markdown = lazy(() => import('@/views/preview/Markdown'));
-const Pdf = lazy(() => import('@/views/preview/Pdf'));
+const Pdf = lazy(() => import('@/views/preview/PDF'));
 const ErrorPage = lazy(() => import('./error-page'));
 const NotFoundPage = lazy(() => import('./404-not-found'));
 
