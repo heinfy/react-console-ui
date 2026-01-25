@@ -1,7 +1,7 @@
 import useEmotionCss from '@/hooks/useEmotionCss';
 import classnames from 'classnames';
 import React, { useMemo } from 'react';
-import markdownIt from './markdown';
+import markdownIt from './markdownIt';
 
 interface MarkdownContentProps {
   content?: string;

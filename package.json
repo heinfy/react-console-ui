@@ -40,6 +40,7 @@
     "monaco-editor": "^0.55.1",
     "monaco-yaml": "^5.4.0",
     "normalize.css": "^8.0.1",
+    "pdfjs-dist": "5.4.296",
     "rc-resize-observer": "^1.4.3",
     "react": "^19.2.0",
     "react-copy-to-clipboard": "^5.1.0",
